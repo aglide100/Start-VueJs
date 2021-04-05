@@ -4,7 +4,7 @@
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-links": "^6.1.21",
-    "@storybook/vue": "^6.1.21",
+    "@storybook/vue": "^6.2.2",
     "babel-loader": "^8.2.2"
   },
   "dependencies": {
