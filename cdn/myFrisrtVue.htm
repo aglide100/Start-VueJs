@@ -11,32 +11,46 @@
         <button v-on:click="onClickButton">버튼!</button>
       </div>
 
-      <MyButton></MyButton>
+      <div>
+        <div>
+          {{msg}}
+        </div>
+      </div>
+      <hr />
+
+      <div>
+        <div v-text="msg"></div>
+      </div>
+      <hr />
+
+      <div>
+        <div v-html="msgHtmTag"></div>
+      </div>
+      <hr />
+
+      <!-- <div>
+        <my-test></my-test>
+      </div> -->
     </div>
   </body>
 
   <script>
-    // export default {
-    //   name: "test",
-    //   components: {
-    //     MyButton: () => import(".Button.vue")
-    //   },
-    // };
-
+    // import { MyTest } from "./Test.vue";
 
     const app = new Vue({
-      name:"test",
+      name: "test",
       el: "#root",
+      // components: { MyTest },
+
       data: {
         liked: false,
+        msg: "Hello world",
+        msgHtmTag: "<h1>Hello world</h1>",
       },
       methods: {
         onClickButton() {
           this.liked = !this.liked;
         },
-      },
-      components: {
-        MyButton: () => import(".Button.vue")
       },
     });
   </script>

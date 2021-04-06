@@ -8,6 +8,7 @@
     "babel-loader": "^8.2.2"
   },
   "dependencies": {
+    "@vue/cli": "^4.5.12",
     "vue": "^2.6.12",
     "vue-loader": "^15.9.6",
     "vue-template-compiler": "^2.6.12"

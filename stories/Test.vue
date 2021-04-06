@@ -1,9 +1,9 @@
 <template>
   <div>
-  <div>Hello</div>
-  <div>
-    <my-button size="small" @onClick="onClick" label="Click me!"/>
-  </div>
+    <div>Hello</div>
+    <div>
+      <MyButton size="small" @onClick="onClick" label="Click me!" />
+    </div>
   </div>
 </template>
 
@@ -11,14 +11,14 @@
 import MyButton from "./Button.vue";
 export default {
   name: "my-test",
-  components:{
-    'my-button': MyButton
-  },
+
+  components: { MyButton },
   props: {},
 
   methods: {
     onClick() {
-    // alert("Hello!");
-  }},
+      // alert("Hello!");
+    },
+  },
 };
 </script>
