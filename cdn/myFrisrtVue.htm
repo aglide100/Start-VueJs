@@ -10,19 +10,22 @@
         <div v-if="liked">좋아요</div>
         <button v-on:click="onClickButton">버튼!</button>
       </div>
+
+      <MyButton></MyButton>
     </div>
   </body>
 
   <script>
-    // import Button from "./Button.vue";
-
     // export default {
+    //   name: "test",
     //   components: {
-    //     MyButton,
+    //     MyButton: () => import(".Button.vue")
     //   },
     // };
 
+
     const app = new Vue({
+      name:"test",
       el: "#root",
       data: {
         liked: false,
@@ -31,6 +34,9 @@
         onClickButton() {
           this.liked = !this.liked;
         },
+      },
+      components: {
+        MyButton: () => import(".Button.vue")
       },
     });
   </script>

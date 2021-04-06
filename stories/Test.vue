@@ -1,18 +1,24 @@
 <template>
-  <div></div>
+  <div>
+  <div>Hello</div>
+  <div>
+    <my-button size="small" @onClick="onClick" label="Click me!"/>
+  </div>
+  </div>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-import MyTest from "./Test.vue";
-
-export default Vue.extend({
-  name: "test",
-
-  components: { MyTest },
-
+<script>
+import MyButton from "./Button.vue";
+export default {
+  name: "my-test",
+  components:{
+    'my-button': MyButton
+  },
   props: {},
 
-  methods: {},
-});
+  methods: {
+    onClick() {
+    // alert("Hello!");
+  }},
+};
 </script>
