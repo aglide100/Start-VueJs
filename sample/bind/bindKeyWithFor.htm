@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>for을 이용한 bind 테스트입니다.</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li v-for="(item, index) in list" :key="index" v-on:click="greet">
+          {{ item }} {{ key }}
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    const app = new Vue({
+      name: "test",
+      el: "#root",
+
+      data: {
+        list: ["banana", "apple", "orange", "strawberry"],
+      },
+
+      methods: {
+        greet: function (event) {
+          alert(this.item);
+        },
+      },
+    });
+  </script>
+</html>

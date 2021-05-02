@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>img src를 bind하는 예제입니다.</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <img v-bind:src="uri" />
+    </div>
+  </body>
+  <script>
+    const app = new Vue({
+      name: "test",
+      el: "#root",
+      data: {
+        uri: "Earth.png",
+      },
+    });
+  </script>
+</html>

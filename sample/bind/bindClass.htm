@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>class를 bind하는 예제입니다.</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      @import "common.css";
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="primary">foo bar</div>
+
+      <hr />
+      <ul class="list">
+        <li v-for="item in list">
+          <!-- 클래스 식별자를 부여, 단 v-bind:class에서 변수만 받는다. -->
+          <div class="box give--margin-bottom--20px" v-bind:class="item">
+            {{ item }}
+          </div>
+        </li>
+      </ul>
+
+      <hr />
+      <!-- style 객체로 바인딩이 가능합니다. -->
+      <div v-bind:style="cssData">danger</div>
+
+      <hr />
+
+      <!-- v-bind: style을 이용하면 인라인에서 style을 주는 것이 가능하지만 camelcase와 kebabcase또한 사용이 가능하지만 대개는 camelcase를 추천합나다. -->
+      <div
+        class="primary"
+        v-bind:style="{width: '100px', fontSize: '25px', 'font-weight': 'bold'}"
+      >
+        foo bar
+      </div>
+    </div>
+  </body>
+  <script>
+    const app = new Vue({
+      name: "test",
+      el: "#root",
+      data: {
+        list: ["small", "medium", "large"],
+        cssData: {
+          color: "red",
+          fontSize: "30px",
+        },
+      },
+    });
+  </script>
+</html>

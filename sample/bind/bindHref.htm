@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>href를 bind하는 예제입니다.</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div v-bind:href="link">Hello</div>
+      <a v-bind:href="link">Click me!</a>
+    </div>
+  </body>
+  <script>
+    const app = new Vue({
+      name: "test",
+      el: "#root",
+      data: {
+        link: "www.google.com",
+      },
+    });
+  </script>
+</html>
