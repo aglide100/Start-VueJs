@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>class를 bind하는 예제입니다.</title>
+    <title>class등 스타일 시트를 bind하는 예제입니다.</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
       @import "common.css";
@@ -14,7 +14,7 @@
       <hr />
       <ul class="list">
         <li v-for="item in list">
-          <!-- 클래스 식별자를 부여, 단 v-bind:class에서 변수만 받는다. -->
+          <!-- 클래스 식별자를 부여, 단 v-bind:class에서 object만 받는다. -->
           <div class="box give--margin-bottom--20px" v-bind:class="item">
             {{ item }}
           </div>
@@ -42,6 +42,7 @@
       el: "#root",
       data: {
         list: ["small", "medium", "large"],
+        // styleSheet
         cssData: {
           color: "red",
           fontSize: "30px",

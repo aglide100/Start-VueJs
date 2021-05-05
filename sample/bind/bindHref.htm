@@ -6,8 +6,9 @@
   </head>
   <body>
     <div id="root">
-      <div v-bind:href="link">Hello</div>
       <a v-bind:href="link">Click me!</a>
+      <hr />
+      <a v-bind:href="link2">Click me2!</a>
     </div>
   </body>
   <script>
@@ -15,7 +16,8 @@
       name: "test",
       el: "#root",
       data: {
-        link: "www.google.com",
+        link: "https://www.google.com",
+        link2: "bindimg.htm",
       },
     });
   </script>

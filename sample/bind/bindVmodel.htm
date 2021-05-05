@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>v-model 예제입니다.</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      @import "common.css";
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- v-model은 v-bind와 v-on이 합쳐진 것이라 보는 것이 이해가 빠름  -->
+      <!-- 다만 한글과 같은 ime입력기에서 반응이 느린 문제가 있음 -->
+      <input v-model="name" />
+      <div>{{name}}</div>
+
+      <hr />
+      <label>
+        name : <input name="name" :value="value.name" @input="myChange" /><br />
+        age : <input name="age" :value="value.age" @input="myChange" /><br />
+      </label>
+
+      <div>name: {{value.name}}</div>
+      <div>age: {{value.age}}</div>
+    </div>
+  </body>
+  <script>
+    const app = new Vue({
+      name: "test",
+      el: "#root",
+      data: {
+        formType: { text: "text", date: "date" },
+        name: "",
+        value: { name: "", age: "" },
+      },
+
+      methods: {
+        myChange($event) {
+          if ($event.target.name === "name") {
+            this.value.name = $event.target.value;
+          } else if ($event.target.name === "age") {
+            this.value.age = $event.target.value;
+          }
+
+          // 자식 컴포넌트에서 부모 컴포넌트로 보내는 함수지만 이 예제에서는 단일의 컴포넌트라 prop없어서 크게 의미가 없다
+          // 만일 컴포넌트 형식으로 작성시 vue라고 해도 prop은 불변성을 지켜주는 것이 좋다.
+          // vue에서는 불변성을 안지켜도 큰 문제는 없다고 하는데 역시 코드가 꼬인다던가 하는 다른 문제등이 있다.
+          this.$emit("input", this.value);
+        },
+      },
+    });
+  </script>
+</html>
