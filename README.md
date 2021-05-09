@@ -16,13 +16,27 @@ install storybook
 
 define type -->
 
+## Purpose
+
+---
+
+This project is sample for [VueJs][vuejslink] and [Storybook][storybooklink] for VueJs
+
+Almost code syntax is written at CDN method
+
+## Install
+
+---
+
+#### install Storybook
+
 > npx -p @storybook/cli sb init
 
 or
 
 > npx -p @storybook/cli sb init --type vue
 
-install vue
+#### install vue
 
 > npm install vue
 
@@ -30,6 +44,11 @@ install vue
 
 > npm i --dev vue-template-compiler
 
+## Preview
 
+---
 
 https://aglide100.github.io/Start-VueJs/
+
+[vuejslink]: https://vuejs.org/
+[storybooklink]: https://storybook.js.org/docs/vue/get-started/introduction
